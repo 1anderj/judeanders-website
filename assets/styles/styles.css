@@ -3,8 +3,10 @@ body {
   color: #400080;
   font-family: "Cambria Math", "Cambria", "Chivo Mono", "Helvetica", fantasy;
   font-weight: lighter;
-  font-size: 24px;
   margin: 36px 72px;
+}
+.normal-text {
+  font-size: 24px;
 }
 h1 {
   font-size: 1.25em;
