@@ -6,10 +6,10 @@ body {
   margin: 36px 72px;
 }
 .normal-text {
-  font-size: 24px;
+  font-size: 1.5rem;
 }
 h1 {
-  font-size: 1.25em;
+  font-size: 1.875rem;
 }
 .menu-link {
   color: white;
@@ -17,12 +17,12 @@ h1 {
   padding: 6px;
 }
 .quotation {
-  font-size: 12px;
+  font-size: 1rem;
 }
 .attribution {
   text-align: end;
-  font-size: 12px;
+  font-size: 1rem;
 }
 h2 {
-  font-size: 1em;
+  font-size: 1rem;
 }
