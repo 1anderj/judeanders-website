@@ -30,6 +30,6 @@ h2 {
 #footer {
   font-family: "Chivo Mono", monospace;
   position: fixed;
-  left: 54;
-  bottom: 54;
+  left: 54px;
+  bottom: 54px;
 }
