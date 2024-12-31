@@ -29,8 +29,7 @@ h2 {
 }
 #footer {
   font-family: "Chivo Mono", monospace;
-  position: absolute;
+  position: fixed;
   left: 54;
   bottom: 54;
 }
-
