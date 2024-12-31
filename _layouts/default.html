@@ -9,7 +9,8 @@
     <link rel="manifest" href="/site.webmanifest">
     <title>{{ page.title }} | {{ site.title }}</title>
     <link rel="stylesheet" media="screen" href="/assets/styles/normalize.css">
-    <link rel="stylesheet" media="screen" href="/assets/styles/styles.css">
+    {% assign cacheBust = site.time | date:'?v=%s' %}
+    <link rel="stylesheet" media="screen" href="{{ "/assets/styles/styles.css" | relative_url | append: cacheBust }}">
   </head>
   <body>
     <a class="menu-link" href="/">Home</a>
