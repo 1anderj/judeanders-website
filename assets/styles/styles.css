@@ -48,6 +48,7 @@ h2 {
 
 .about-paragraph{
   padding: 6px;
+  border: solid;
   border-color:#400080;
   border-width: medium;
   border-radius: 12px;
