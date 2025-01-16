@@ -1,0 +1,19 @@
+---
+layout: default
+title: Base-26 Encoder Decoder
+---
+<h1>Jude's Encoder Decoder</h1>
+<form>
+    <label for="encoding" class="encoding-label">
+    Base:
+    <select name="encoding" class="encoding">
+        <option value="26">26</option>
+    </select>
+    </label>
+    <input type="text" name="string" class="clear-text input" placeholder="Plain Text (a-Z and spaces)"/>
+    <input type="text" name="encoded" class="encoded-text input" placeholder="Encoded Text"/>
+</form>
+<button class="spinner-stopper">Stop spinning</button>
+<p class="note">Note:
+    If the result doesn't make sense, add z to the beginning of the plain text.
+</p>

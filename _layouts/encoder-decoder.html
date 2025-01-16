@@ -13,7 +13,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Chivo+Mono:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     {% assign cacheBust = site.time | date:'?v=%s' %}
-    <link rel="stylesheet" media="screen" href="{{ "/assets/styles/styles.css" | relative_url | append: cacheBust }}">
+    <link rel="stylesheet" media="screen" href="{{ "/assets/styles/encoder-decoder.css" | relative_url | append: cacheBust }}">
   </head>
   <body>
     <a class="menu-link" href="/">Home</a>
@@ -23,5 +23,6 @@
     <footer id="footer">
       <p>© 2024 Jude Anders</p>
     </footer>
+    <script src="/assets/scripts/encoder-decoder.js"></script>
   </body>
 </html>
