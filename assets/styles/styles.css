@@ -47,15 +47,14 @@ h2 {
 }
 
 .about-paragraph{
-  padding: 6px;
+  padding: 12px;
   border: solid;
   border-color:#400080;
   border-width: medium;
   border-radius: 12px;
-  margin: 54px
+  margin: 54px 12px;
 }
 .about-flexbox{
   display: flex;
-  flex-wrap: wrap;
   flex-direction: row;
 }
