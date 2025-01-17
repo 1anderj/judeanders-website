@@ -1,0 +1,130 @@
+---
+layout: default
+title: Dozenal Multiplication Practice
+---
+<div class="dozenal">
+<h1>Base 12 Multiplication Practice</h1>
+<label for="firstFactor">Select First Factor:</label>
+<select id="firstFactor">
+    <option value="all">All</option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+    <option value="8">8</option>
+    <option value="9">9</option>
+    <option value="10">ⱹ</option>
+    <option value="11">⸡</option>
+</select>
+<div id="question">Loading...</div>
+<input type="text" id="answer" autofocus>
+<div id="result"></div>
+
+<script>
+    // Convert a number from base 10 to base 12
+    function toBase12(num) {
+        const digits = "0123456789ⱹ⸡"; // base 12 digits (0-9 and ⱹ for 10, ⸡ for 11)
+        let result = "";
+        while (num > 0) {
+            result = digits[num % 12] + result;
+            num = Math.floor(num / 12);
+        }
+        return result || "0";
+    }
+
+    // Convert a base 12 string to a base 10 number
+    function fromBase12(str) {
+        const digits = "0123456789ⱹ⸡"; // base 12 digits
+        let result = 0;
+        for (let i = 0; i < str.length; i++) {
+            result = result * 12 + digits.indexOf(str[i]);
+        }
+        return result;
+    }
+
+    let num1, num2, correctAnswer;
+
+    // Generate a new multiplication problem based on the selected first factor
+    function newProblem() {
+        const firstFactor = document.getElementById("firstFactor").value;
+
+        if (firstFactor === "all") {
+            // Random numbers between 1 and 12 (base 12)
+            num1 = Math.floor(Math.random() * 12) + 1;
+        } else {
+            // Use the selected first factor (from dropdown)
+            num1 = parseInt(firstFactor);
+        }
+
+        // Random second factor between 1 and 12 (base 12)
+        num2 = Math.floor(Math.random() * 12) + 1;
+
+        // Display the multiplication problem in base 12
+        document.getElementById("question").innerText = 
+            `${toBase12(num1)} × ${toBase12(num2)} =`;
+
+        // Calculate the correct answer in base 10
+        correctAnswer = num1 * num2;
+    }
+
+    // Check the user's answer
+    function checkAnswer() {
+        const userAnswer = document.getElementById("answer").value.trim();
+        const userAnswerInBase10 = fromBase12(userAnswer);
+
+        // Clear any previous error styling
+        document.getElementById("result").classList.remove("error");
+
+        // Check if the user's answer is correct
+        if (userAnswerInBase10 === correctAnswer) {
+            document.getElementById("result").innerText = `Correct! The answer is ${toBase12(correctAnswer)}.`;
+            document.getElementById("result").style.color = "green"; // Set to green for correct
+            setTimeout(() => {
+                document.getElementById("result").innerText = ''; // Clear the result
+                newProblem(); // Move to the next problem
+                document.getElementById("answer").value = ''; // Clear the input
+                document.getElementById("answer").focus(); // Focus on the input
+            }, 1000); // Wait 1 second before moving to the next problem
+        } else {
+            document.getElementById("result").innerText = "Incorrect. Try again.";
+            document.getElementById("result").style.color = "red"; // Force red for incorrect
+            document.getElementById("result").classList.add("error"); // Add error class to make it red
+        }
+    }
+
+    // Listen for the Enter key to check the answer
+    document.getElementById("answer").addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+            checkAnswer();
+        }
+    });
+
+    // Listen for changes in the first factor dropdown
+    document.getElementById("firstFactor").addEventListener("change", function() {
+        newProblem(); // Generate a new problem based on the selection
+        document.getElementById("answer").value = ''; // Clear the previous answer
+        document.getElementById("result").innerText = ''; // Clear previous result
+        document.getElementById("result").classList.remove("error"); // Remove error class
+        document.getElementById("answer").focus(); // Focus on the input
+    });
+
+    // Listen for key presses to insert ⱹ (d) and ⸡ (e) for base 12
+    document.getElementById("answer").addEventListener("keydown", function(event) {
+        if (event.key === "d" || event.key === "D") {
+            event.preventDefault(); // Prevent the default "d" key action
+            document.getElementById("answer").value += "ⱹ"; // Add ⱹ to input
+        } else if (event.key === "e" || event.key === "E") {
+            event.preventDefault(); // Prevent the default "e" key action
+            document.getElementById("answer").value += "⸡"; // Add ⸡ to input
+        }
+    });
+
+    // Initialize the first problem immediately
+    window.onload = function() {
+        newProblem(); // Generate the first problem
+    };
+</script>
+</div>
