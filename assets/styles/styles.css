@@ -47,7 +47,7 @@ h2 {
   font-family: "Chivo Mono", monospace;
 }
 
-.about-paragraph{
+.about-paragraph {
   padding: 12px;
   border: solid;
   border-color:#400080;
@@ -55,11 +55,11 @@ h2 {
   border-radius: 12px;
   margin: 54px 12px;
 }
-.about-flexbox{
+.about-flexbox {
   display: flex;
   flex-direction: row;
 }
 
-.about-flexbox p:not(:first-child) {
+.about-flexbox p {
   margin-top: 1em;
 }
