@@ -19,6 +19,7 @@ title: Dozenal Multiplication Practice
     <option value="9">9</option>
     <option value="10">ⱹ</option>
     <option value="11">⸡</option>
+    <option value="square">Square</option> <!-- New option for squaring -->
 </select>
 <div id="question">Loading...</div>
 <input type="text" id="answer" autofocus>
@@ -55,13 +56,16 @@ title: Dozenal Multiplication Practice
         if (firstFactor === "all") {
             // Random numbers between 1 and 12 (base 12)
             num1 = Math.floor(Math.random() * 12) + 1;
+            num2 = Math.floor(Math.random() * 12) + 1;
+        } else if (firstFactor === "square") {
+            // If square is selected, both factors are the same
+            num1 = Math.floor(Math.random() * 12) + 1;
+            num2 = num1;
         } else {
             // Use the selected first factor (from dropdown)
             num1 = parseInt(firstFactor);
+            num2 = Math.floor(Math.random() * 12) + 1;
         }
-
-        // Random second factor between 1 and 12 (base 12)
-        num2 = Math.floor(Math.random() * 12) + 1;
 
         // Display the multiplication problem in base 12
         document.getElementById("question").innerText = 
