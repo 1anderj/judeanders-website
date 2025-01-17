@@ -88,6 +88,7 @@ input {
 #result {
     font-size: 20px;
     color: green; /* Default color is green for correct answers */
+    margin: 12px;
 }
 .error {
     color: red; /* Make error messages red */
