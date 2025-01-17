@@ -97,3 +97,66 @@ select {
     font-size: 18px;
     padding: 5px;
 }
+.input
+{
+  width: 90%;
+  font-size: 2em;
+  border-radius: 1em;
+  border: 1px solid black;
+  padding: 0 1em;
+  margin: 0 auto;
+  margin-bottom: 1em;
+}
+.encoder
+{
+  font-family: Helvetica, sans-serif;
+  background-color: white;
+  color: #400080;
+  padding: 54px;
+}
+.encoder h1
+{
+  text-align: center;
+  font-size: 1.875rem;
+  padding: 18px 0 30px 0;
+}
+.encoding-label
+{
+  display: block;
+  width: 25em;
+  margin: 0 auto;
+  margin-bottom: 1em;
+}
+.note
+{
+  color: red;
+  text-align: center;
+  font-style: italic;
+}
+.spinner-stopper
+{
+  display: block;
+  margin: 0 auto;
+}
+
+.encoder body {
+  perspective: 500px;
+}
+.note {
+  text-align: center;
+  animation-name: spin, depth;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: 50s;
+}
+@keyframes spin {
+  from { transform: rotateX(0deg); }
+  to { transform: rotateX(-360deg); }
+}
+@keyframes depth {
+  0% { text-shadow: 0 0 black; }
+  25% { text-shadow: 1px 0 black, 2px 0 black, 3px 0 black, 4px 0 black, 5px 0 black; }
+  50% { text-shadow: 0 0 black; }
+  75% { text-shadow: -1px 0 black, -2px 0 black, -3px 0 black, -4px 0 black, -5px 0 black; }
+  100% { text-shadow: 0 0 black; }
+}

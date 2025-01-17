@@ -8,14 +8,14 @@
   margin: 0 auto;
   margin-bottom: 1em;
 }
-body
+.encoder
 {
   font-family: Helvetica, sans-serif;
   background-color: white;
   color: #400080;
   padding: 54px;
 }
-h1
+.encoder h1
 {
   text-align: center;
   font-size: 1.875rem;
@@ -40,7 +40,7 @@ h1
   margin: 0 auto;
 }
 
-body {
+.encoder body {
   perspective: 500px;
 }
 .note {
@@ -49,22 +49,6 @@ body {
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-duration: 50s;
-}
-
-.normal-text {
-  font-size: 1.5rem;
-}
-.menu-link {
-  color: white;
-  background-color: #400080;
-  padding: 6px;
-}
-h2 {
-  font-size: 1rem;
-  padding: 0 0 12px 0;
-}
-#footer {
-  font-family: "Chivo Mono", monospace;
 }
 @keyframes spin {
   from { transform: rotateX(0deg); }
