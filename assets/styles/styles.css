@@ -60,6 +60,6 @@ h2 {
   flex-direction: row;
 }
 
-p~p{
-  margin: 6;
+.about-flexbox p:not(:first-child) {
+  margin-top: 1em;
 }
