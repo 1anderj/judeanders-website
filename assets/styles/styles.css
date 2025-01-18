@@ -26,6 +26,12 @@ h1 {
   color: white;
   background-color: #400080;
   padding: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  max-width: 216px;
+  min-width: 60px;
 }
 .quotation {
   font-size: 1rem;
@@ -153,6 +159,8 @@ select {
 #menu-div {
   display: flex;
   flex-wrap: wrap;
+  gap: 16px;
+  width: 100%;
 }
 
 @keyframes spin {
