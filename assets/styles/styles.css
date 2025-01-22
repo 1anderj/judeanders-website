@@ -175,6 +175,11 @@ select {
   width: 100%;
 }
 
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 @keyframes spin {
   from { transform: rotateX(0deg); }
   to { transform: rotateX(-360deg); }
