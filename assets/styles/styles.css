@@ -163,6 +163,18 @@ select {
   width: 100%;
 }
 
+#music {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+#podcasts {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
 @keyframes spin {
   from { transform: rotateX(0deg); }
   to { transform: rotateX(-360deg); }
