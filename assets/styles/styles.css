@@ -181,6 +181,10 @@ select {
   justify-content: space-evenly;
 }
 
+#center-error {
+  text-align: center;
+}
+
 @keyframes spin {
   from { transform: rotateX(0deg); }
   to { transform: rotateX(-360deg); }
