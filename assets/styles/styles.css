@@ -163,6 +163,10 @@ select {
   width: 100%;
 }
 
+#logo-favicon {
+  max-width: 48px;
+}
+
 #music {
   display: flex;
   flex-wrap: wrap;
