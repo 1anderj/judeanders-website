@@ -40,7 +40,7 @@ function generateOutput() {
         return;
       }
 
-      if (input === "<em> Hi</em>") {
+      if (input === "<em>Hi</em>") {
         outputDiv.innerHTML = "The <b>HORSE</b> is<br>a noble animal.";
         return;
       }
