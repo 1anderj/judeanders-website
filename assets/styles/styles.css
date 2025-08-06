@@ -161,6 +161,7 @@ select {
   flex-wrap: wrap;
   gap: 16px;
   width: 100%;
+  margin-bottom: 60px;
 }
 
 #logo-favicon {
