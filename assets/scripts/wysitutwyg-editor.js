@@ -41,7 +41,7 @@ function generateOutput() {
       }
 
       if (input === "<em>Hi</em>") {
-        outputDiv.innerHTML = "The <b>HORSE</b> is<br>a noble animal.";
+        outputDiv.innerHTML = "The HORSE is a noble animal.";
         return;
       }
 
