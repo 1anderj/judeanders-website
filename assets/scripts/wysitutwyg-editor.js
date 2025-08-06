@@ -31,36 +31,46 @@ function decorate(word) {
 }
 
 function generateOutput() {
-    const input = document.getElementById("input").value.trim();
-    const outputDiv = document.getElementById("output");
+      const input = document.getElementById("input").value.trim();
+      const outputDiv = document.getElementById("output");
 
-    if (input === "<em> Hi</em>") {
-    outputDiv.innerHTML = "The HORSE is a noble animal.";
-    return;
+      if (input === "") {
+        outputDiv.innerHTML = "";
+        return;
+      }
+
+      if (input === "<em> Hi</em>") {
+        outputDiv.innerHTML = "The <b>HORSE</b> is<br>a noble animal.";
+        return;
+      }
+
+      let wordCount = Math.floor(Math.random() * 60) + 1;
+      let wordsList = [];
+      let capitalizeNext = maybe(0.5);
+
+      for (let i = 0; i < wordCount; i++) {
+        let word = randomWord();
+        if (capitalizeNext) {
+          word = word.charAt(0).toUpperCase() + word.slice(1);
+          capitalizeNext = false;
+        }
+        let decorated = decorate(word);
+        if (maybe(0.02)) {
+          decorated += ".";
+          capitalizeNext = true;
+        }
+        wordsList.push(decorated);
+      }
+
+      // Final punctuation
+      if (!capitalizeNext) {
+        let punctuationChance = Math.random();
+        if (punctuationChance < 0.7) wordsList[wordsList.length - 1] += ".";
+        else if (punctuationChance < 0.9) wordsList[wordsList.length - 1] += "?";
+        else wordsList[wordsList.length - 1] += "!";
+      }
+
+      outputDiv.innerHTML = wordsList.join(" ");
     }
 
-    if (input === "") {
-    outputDiv.innerHTML = "";
-    return;
-    }
-
-    let wordCount = Math.floor(Math.random() * 60) + 1;
-    let wordsList = [];
-
-    for (let i = 0; i < wordCount; i++) {
-    let word = randomWord();
-    wordsList.push(decorate(word));
-    }
-
-    if (maybe(0.5)) {
-    wordsList[0] = wordsList[0].charAt(0).toUpperCase() + wordsList[0].slice(1);
-    let punctuationChance = Math.random();
-    if (punctuationChance < 0.7) wordsList[wordCount - 1] += ".";
-    else if (punctuationChance < 0.9) wordsList[wordCount - 1] += "?";
-    else wordsList[wordCount - 1] += "!";
-    }
-
-    outputDiv.innerHTML = wordsList.join(" ");
-}
-
-document.getElementById("input").addEventListener("input", generateOutput);
+    document.getElementById("input").addEventListener("input", generateOutput);
