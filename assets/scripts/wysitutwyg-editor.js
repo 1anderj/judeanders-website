@@ -27,7 +27,8 @@ function decorate(word) {
     if (maybe(0.06)) w += ",";
     if (maybe(0.01)) w += ":";
     if (maybe(0.01)) w += ";";
-    if (maybe(0.01)) w += emojis[Math.floor(Math.random() * emojis.length)];    return w;
+    if (maybe(0.01)) w += emojis[Math.floor(Math.random() * emojis.length)];
+    return w;
 }
 
 function generateOutput() {
