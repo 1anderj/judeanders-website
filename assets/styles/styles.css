@@ -201,6 +201,7 @@ select {
   100% { text-shadow: 0 0 black; }
 }
 
+/* XKCD */
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
@@ -241,3 +242,11 @@ select {
 #good-xkcd {
   background: #f9f9f9;
 }
+
+/* WYSITUTWYG Editor */
+.output { border: 1px solid #ccc; padding: 10px; margin-top: 10px; min-height: 50px; white-space: pre-wrap; }
+.bold { font-weight: bold; }
+.italic { font-style: italic; }
+.underline { text-decoration: underline; }
+.allcaps { text-transform: uppercase; }
+textarea { width: 100%; height: 100px; }
