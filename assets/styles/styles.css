@@ -1,3 +1,4 @@
+/* General */
 body {
   background-color: white;
   color: #400080;
@@ -18,8 +19,26 @@ h1 {
   font-size: 1.875rem;
 }
 
+h2 {
+  font-size: 1rem;
+  margin: 0;
+}
+
 .page-title {
   padding: 18px 0 30px 0;
+}
+
+/* Menu */
+#menu-div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  width: 100%;
+  margin-bottom: 60px;
+}
+
+#logo-favicon {
+  max-width: 52px;
 }
 
 .menu {
@@ -68,12 +87,18 @@ h1 {
   display: block;
 }
 
+/* Footer */
+#footer {
+  font-family: "Chivo Mono", monospace;
+}
+
 /*Math quotations*/
 .quotation {
   font-size: 1rem;
   min-width: 320px;
   width: 75%;
 }
+
 .attribution {
   text-align: end;
   font-size: 1rem;
@@ -81,21 +106,18 @@ h1 {
   width: 75%;
 }
 
-h2 {
-  font-size: 1rem;
-  margin: 0;
-}
+/* Dozenal */
+
 #dozenal-GPT {
   margin: 12px;
 }
-#math-h2{
+
+/* Math Quotations */
+#math-h2 {
   padding: 0 0 12px 0;
 }
 
-#footer {
-  font-family: "Chivo Mono", monospace;
-}
-
+/* About */
 .about-paragraph {
   padding: 12px;
   border: solid;
@@ -104,6 +126,7 @@ h2 {
   border-radius: 12px;
   margin: 54px 12px;
 }
+
 .about-flexbox {
   display: flex;
   flex-direction: row;
@@ -118,29 +141,35 @@ h2 {
     text-align: center;
     margin-top: 50px;
 }
+
 #question {
     font-size: 24px;
     margin: 20px;
 }
+
 input {
     font-size: 20px;
     padding: 5px;
     text-align: center;
 }
+
 #result {
     font-size: 20px;
-    color: green; /* Default color is green for correct answers */
+    color: green;
     margin: 12px;
 }
+
 .error {
-    color: red; /* Make error messages red */
+    color: red;
 }
+
 select {
     font-size: 18px;
     padding: 5px;
 }
-.input
-{
+
+/* Encoder-decoder */
+.input {
   width: 90%;
   font-size: 2em;
   border-radius: 1em;
@@ -149,34 +178,32 @@ select {
   margin: 0 auto;
   margin-bottom: 1em;
 }
-.encoder
-{
+
+.encoder {
   font-family: Helvetica, sans-serif;
   background-color: white;
   color: #400080;
   padding: 54px;
 }
-.encoder h1
-{
+
+.encoder h1 {
   text-align: center;
   font-size: 1.875rem;
   padding: 18px 0 30px 0;
 }
-.encoding-label
-{
+
+.encoding-label {
   display: block;
   width: 5.84rem;
   margin: 0 auto;
   margin-bottom: 1em;
 }
-.note
-{
+.note {
   color: red;
   text-align: center;
   font-style: italic;
 }
-.spinner-stopper
-{
+.spinner-stopper {
   display: block;
   margin: 0 auto;
 }
@@ -184,6 +211,7 @@ select {
 .encoder body {
   perspective: 500px;
 }
+
 .note {
   text-align: center;
   animation-name: spin, depth;
@@ -192,18 +220,20 @@ select {
   animation-duration: 50s;
 }
 
-#menu-div {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  width: 100%;
-  margin-bottom: 60px;
+@keyframes spin {
+  from { transform: rotateX(0deg); }
+  to { transform: rotateX(-360deg); }
 }
 
-#logo-favicon {
-  max-width: 52px;
+@keyframes depth {
+  0% { text-shadow: 0 0 black; }
+  25% { text-shadow: 1px 0 black, 2px 0 black, 3px 0 black, 4px 0 black, 5px 0 black; }
+  50% { text-shadow: 0 0 black; }
+  75% { text-shadow: -1px 0 black, -2px 0 black, -3px 0 black, -4px 0 black, -5px 0 black; }
+  100% { text-shadow: 0 0 black; }
 }
 
+/* Links */
 #music {
   display: flex;
   flex-wrap: wrap;
@@ -216,26 +246,16 @@ select {
   width: 100%;
 }
 
+/* Gabby */
 .flex {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
 
+/* 404 */
 #center-error {
   text-align: center;
-}
-
-@keyframes spin {
-  from { transform: rotateX(0deg); }
-  to { transform: rotateX(-360deg); }
-}
-@keyframes depth {
-  0% { text-shadow: 0 0 black; }
-  25% { text-shadow: 1px 0 black, 2px 0 black, 3px 0 black, 4px 0 black, 5px 0 black; }
-  50% { text-shadow: 0 0 black; }
-  75% { text-shadow: -1px 0 black, -2px 0 black, -3px 0 black, -4px 0 black, -5px 0 black; }
-  100% { text-shadow: 0 0 black; }
 }
 
 /* XKCD */
