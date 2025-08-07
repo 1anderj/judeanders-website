@@ -87,6 +87,21 @@ h2 {
   display: block;
 }
 
+.dropdown-container.right-dropdown {
+  margin-left: auto;
+}
+
+.right-menu {
+  background-color: transparent;
+  color: #400080;
+  border: 1px solid #400080;
+  border-radius: 12%;
+}
+
+.right-menu:hover, .right-menu:focus {
+  background-color: #ccc;
+}
+
 /* Footer */
 #footer {
   font-family: "Chivo Mono", monospace;
