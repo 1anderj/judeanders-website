@@ -20,19 +20,35 @@
       <a href="/">
         <img id="logo-favicon" src="/assets/images/favicon/favicon-1024x1024.png" alt="Purple pentagon with gray J favicon">
       </a>
-      <a class="menu-link" href="/about/">About</a>
-      <a class="menu-link" href="/math-quotations/">Math Quotations</a>
-      <a class="menu-link" href="/good-xkcd-comics/">Good xkcd Comics</a>
-      <a class="menu-link" href="/wysitutwyg-editor/">WYSITUTWYG Editor</a>
-      <a class="menu-link" href="/dozenal/">Dozenal Multiplication Tables Practice</a>
-      <a class="menu-link" href="/encoder-decoder/">Jude's Base-26 Encoder Decoder</a>
-      <a class="menu-link" href="/gabby/">Gabby Photos</a>
-      <a class="menu-link" href="/links/">Links</a>
-      <a class="menu-link" href="/contact/">Contact</a>
+      <div class="dropdown-container">
+        <button class="menu" onclick="dropdownLists()">Assorted Lists and Galleries</button>
+        <div id="lists-dropdown" class="dropdown-links">
+          <a class="menu-item" href="/math-quotations/">Math Quotations</a>
+          <a class="menu-item" href="/good-xkcd-comics/">Good xkcd Comics</a>
+          <a class="menu-item" href="/gabby/">Gabby Photos</a>
+                <a class="menu-item" href="/links/">Links</a>
+        </div>
+      </div>
+      <div class="dropdown-container">
+        <button class="menu" onclick="dropdownInteractive()">Interactive Resources</button>
+        <div id="interactive-dropdown" class="dropdown-links">
+          <a class="menu-item" href="/wysitutwyg-editor/">WYSITUTWYG Editor</a>
+          <a class="menu-item" href="/dozenal/">Dozenal Multiplication Tables Practice</a>
+          <a class="menu-item" href="/encoder-decoder/">Jude's Base-26 Encoder Decoder</a>
+        </div>
+      </div>
+      <div class="dropdown-container">
+        <button class="menu" onclick="dropdownAbout()">About</button>
+        <div id="about-dropdown" class="dropdown-links">
+          <a class="menu-item" href="/about/">About</a>
+          <a class="menu-item" href="/contact/">Contact</a>
+        </div>
+      </div>
     </div>
     {{ content }}
     <footer id="footer">
       <p>© 2025 Jude Anders</p>
     </footer>
+    <script src="/assets/scripts/dropdowns.js"></script>
   </body>
 </html>
