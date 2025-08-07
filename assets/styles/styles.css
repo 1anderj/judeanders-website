@@ -7,6 +7,10 @@ body {
   padding: 54px;
 }
 
+p {
+  font-style: normal;
+}
+
 .normal-text {
   font-size: 1.5rem;
 }
@@ -100,6 +104,11 @@ h2 {
 
 .right-menu:hover, .right-menu:focus {
   background-color: #ccc;
+}
+
+.right-dropdown-links {
+  right: 0;
+  left: auto;
 }
 
 /* Footer */
