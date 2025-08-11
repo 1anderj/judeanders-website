@@ -324,6 +324,13 @@ select {
 
 #good-xkcd {
   background: #f9f9f9;
+  padding: 6px;
+}
+
+#good-xkcd h1, #good-xkcd h2, #good-xkcd p {
+  position: relative;
+  left: 24px;
+  width: 92%;
 }
 
 /* WYSITUTWYG Editor */
