@@ -3,4 +3,5 @@
 source "https://rubygems.org"
 
 # gem "rails"
-gem "github-pages", group: :jekyll_plugins
+# gem "github-pages", group: :jekyll_plugins
+gem "jekyll-v4-github-pages", group: :jekyll_plugins
