@@ -4,7 +4,13 @@ title: Dozenal Multiplication Practice
 ---
 <div class="dozenal">
 <h1>Dozenal Multiplication Practice</h1>
-<h2 id="dozenal-GPT">Created by ChatGPT</h2>
+
+<label for="practiceMode">Mode:</label>
+<select id="practiceMode">
+    <option value="multiplication">Multiplication</option>
+    <option value="division">Division</option>
+</select>
+
 <label for="firstFactor">Select First Factor:</label>
 <select id="firstFactor">
     <option value="all">All</option>
@@ -21,6 +27,7 @@ title: Dozenal Multiplication Practice
     <option value="11">⸡</option>
     <option value="square">Square</option> <!-- New option for squaring -->
 </select>
+
 <div id="question">Loading...</div>
 <input type="text" inputmode="numeric" id="answer" autofocus>
 <div id="result"></div>
@@ -47,32 +54,54 @@ title: Dozenal Multiplication Practice
         return result;
     }
 
-    let num1, num2, correctAnswer;
+    let num1, num2, correctAnswer, currentMode;
 
     // Generate a new multiplication problem based on the selected first factor
     function newProblem() {
         const firstFactor = document.getElementById("firstFactor").value;
+        currentMode = document.getElementById("practiceMode").value;
 
-        if (firstFactor === "all") {
-            // Random numbers between 1 and 12 (base 12)
-            num1 = Math.floor(Math.random() * 12) + 1;
-            num2 = Math.floor(Math.random() * 12) + 1;
-        } else if (firstFactor === "square") {
-            // If square is selected, both factors are the same
-            num1 = Math.floor(Math.random() * 12) + 1;
-            num2 = num1;
+        if (currentMode === "multiplication") {
+            if (firstFactor === "all") {
+                num1 = Math.floor(Math.random() * 12) + 1;
+                num2 = Math.floor(Math.random() * 12) + 1;
+            } else if (firstFactor === "square") {
+                num1 = Math.floor(Math.random() * 12) + 1;
+                num2 = num1;
+            } else {
+                num1 = parseInt(firstFactor);
+                num2 = Math.floor(Math.random() * 12) + 1;
+            }
+
+            document.getElementById("question").innerText =
+                `${toBase12(num1)} × ${toBase12(num2)} =`;
+
+            correctAnswer = num1 * num2;
         } else {
-            // Use the selected first factor (from dropdown)
-            num1 = parseInt(firstFactor);
-            num2 = Math.floor(Math.random() * 12) + 1;
+            if (firstFactor === "square") {
+                const root = Math.floor(Math.random() * 12) + 1;
+                const square = root * root;
+
+                document.getElementById("question").innerText =
+                    `√${toBase12(square)} =`;
+
+                correctAnswer = root;
+            } else {
+                if (firstFactor === "all") {
+                    num2 = Math.floor(Math.random() * 12) + 1;
+                } else {
+                    num2 = parseInt(firstFactor);
+                }
+
+                const quotient = Math.floor(Math.random() * 12) + 1;
+                const dividend = num2 * quotient;
+
+                document.getElementById("question").innerText =
+                    `${toBase12(dividend)} ÷ ${toBase12(num2)} =`;
+
+                correctAnswer = quotient;
+            }
         }
-
-        // Display the multiplication problem in base 12
-        document.getElementById("question").innerText = 
-            `${toBase12(num1)} × ${toBase12(num2)} =`;
-
-        // Calculate the correct answer in base 10
-        correctAnswer = num1 * num2;
     }
 
     // Check the user's answer
@@ -116,6 +145,14 @@ title: Dozenal Multiplication Practice
         document.getElementById("answer").focus(); // Focus on the input
     });
 
+
+    document.getElementById("practiceMode").addEventListener("change", function() {
+        newProblem();
+        document.getElementById("answer").value = '';
+        document.getElementById("result").innerText = '';
+        document.getElementById("answer").focus();
+    });
+
     // Listen for key presses to insert ⱹ (d) and ⸡ (e) for base 12
     document.getElementById("answer").addEventListener("keydown", function(event) {
         if (event.key === "d" || event.key === "D") {
@@ -133,6 +170,7 @@ title: Dozenal Multiplication Practice
     };
 </script>
 </div>
+
 <div class="more-normal-text">
 <p><strong>No thinking in decimal!</strong></p>
 <p>Type the answer in the box, then press enter. If your answer is correct, a message will appear and the next problem will be displayed. If your answer is wrong, delete it and try again.</p>
