@@ -6,14 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <title>{{ page.title }} | {{ site.title }}</title>
+    <link rel="manifest" href="/assets/images/favicon/site.webmanifest">
+    <title>{{ title }} | {{ site.title }}</title>
     <link rel="stylesheet" media="screen" href="/assets/styles/normalize.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Chivo+Mono:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    {% assign cacheBust = site.time | date:'?v=%s' %}
-    <link rel="stylesheet" media="screen" href="{{ "/assets/styles/styles.css" | relative_url | append: cacheBust }}">
+    <link rel="stylesheet" media="screen" href="/assets/styles/styles.css?v={{ buildTime }}">
   </head>
   <body>
     <div id="menu-div">
