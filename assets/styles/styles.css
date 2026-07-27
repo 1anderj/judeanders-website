@@ -376,8 +376,8 @@ textarea {
 
 #random-scroll {
   position: fixed;
-  bottom: 12px;
-  left: 12px;
+  bottom: 24px;
+  left: 24px;
   z-index: 10;
   background-color: #400080;
   border: none;
