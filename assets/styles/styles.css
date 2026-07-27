@@ -373,3 +373,37 @@ textarea {
 #go-back:hover, #go-back:focus {
 	background-color: #794ca6;
 }
+
+#random-scroll {
+  position: fixed;
+  bottom: 12px;
+  left: 12px;
+  z-index: 10;
+  background-color: #400080;
+  border: none;
+  border-radius: 12px;
+  color: white;
+  padding: 12px;
+  text-align: center;
+  font-size: 16px;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+#random-scroll:hover, #random-scroll:focus {
+  background-color: #794ca6;
+}
+
+#random-scroll .random-scroll-arrow {
+  font-size: 1.2em;
+  line-height: 1;
+}
+
+@media (max-width: 480px) {
+  #random-scroll {
+    padding: 8px 10px;
+    font-size: 14px;
+    bottom: 8px;
+    left: 8px;
+  }
+}
