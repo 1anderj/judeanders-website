@@ -5,6 +5,10 @@ body {
   font-family: "Chivo Mono", fantasy;
   font-weight: lighter;
   padding: 54px;
+  min-height: 100vh;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
 }
 
 p {
@@ -116,6 +120,7 @@ h2 {
 /* Footer */
 #footer {
   font-family: "Chivo Mono", monospace;
+  margin-top: auto;
 }
 
 /*Math quotations*/
