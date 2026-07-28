@@ -143,12 +143,6 @@ h2 {
   width: 75%;
 }
 
-/* Dozenal */
-
-#dozenal-GPT {
-  margin: 12px;
-}
-
 /* Math Quotations */
 #math-h2 {
   padding: 0 0 12px 0;
@@ -174,9 +168,14 @@ h2 {
   margin-bottom: 0;
 }
 
+/* Dozenal */
+
+#dozenal-GPT {
+  margin: 12px;
+}
+
 .dozenal {
     text-align: center;
-    margin-top: 50px;
 }
 
 #question {
